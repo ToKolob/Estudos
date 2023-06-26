@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos no html</title>
+</head>
+<body>
+    <h1>E os Vídeos?</h1>
+
+    <p>Vamos começar colocando a tag <em>video</em></p> e configurando seus paremetros:
+    <ul>
+        <li><em>width</em>: indica a largura do video, recomendado 600px.</li>
+        <li><em>poster</em>: uma imagem para adicionar a capa do video</li>
+        <li><em>controls</em>: igual no <a href="../ex 011/index.html">audio</a>.</li>
+        <li><em>autoplay</em>: para iniciar automaticamente ao abrir a pagina</li>
+    </ul>
+    <P>No <a href="https://www.pexels.com/pt-br/" target="_blank" rel="next">Pexels</a> podemos achar diversos videos sem <em>copyright</em> para usar.</P>
+
+    <h2>Formatos aceitos</h2>
+    <p>Para os formatos suportados vamos usar MPEG, WEBM(bem levinho) e OGG</p>
+    <p>O Guanabara indicou o uso do <a href="https://handbrake.fr/downloads.php" target="_blank" rel="next">Handbrake</a>, porém eu já tenho costume de usar o Format factory.</p>
+
+    <video width="640" poster="#" controls>
+        <source src="pexels-benjamin-hastings-17209196-1280x720-30fps [WEBM].webm" type="video/webm">
+
+        <source src="pexels-benjamin-hastings-17209196-1280x720-30fps [MP4].mp4" type="video/mp4">
+
+        <p>infelizmente seu navegador não suporta esse formato</p>
+    </video>
+    
+    <picture>
+        <source media="max-width 640 px" srcset="exemplo.bmp" 
+        >
+        <img src="exemplo.bmp" alt="" width="640px">
+    </picture>
+
+    <p>Por outro lado você pode usar videos hospedados em outros sites que serão mais baratos e possibilitarão economizar mais recursos do cliente.</p>
+
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/eBiFSH2fgek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <iframe src="https://player.vimeo.com/video/802774405?h=fa677f05f3" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/802774405">Meteores</a> from <a href="https://vimeo.com/chezeddy">Eddy</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+
+    
+</body>
+</html>

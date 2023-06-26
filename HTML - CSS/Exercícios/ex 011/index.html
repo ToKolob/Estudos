@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midia em HTML5</title>
+</head>
+<body>
+    <h1>Imagem dinamica</h1>
+    <p>Para adicionarmos imagens em tamanhos que diferem pela fonte, usamos primeiro a tag <strong>picture</strong> e em seguida colocamos <strong>source:media:type</strong>, nessa seguencia escolhemos o termo <strong>min ou max-width</strong>, e colocamos o tamanho de referência <strong>700px, 1000px, 300px, etc.</strong> e ai então usamos a tag <strong>img</strong>, para cada <strong>source</strong>. </p>
+    <p>Tente abrir esse site em varios dispositivos diferentes, ou altere o tamanho do navegador</p>
+    <strong>Se você usar o max-width é crucial que você coloque o <en>source</en> a cima e em ordem do menor para o maior</strong>
+    <br>
+    <picture>
+        <source media="(max-width: 727px)" srcset="imagens/p.png" type="image/png">
+        <source media="(max-width: 1027px)" srcset="imagens/m.png" type="image/png">
+        <img src="imagens/g.png" alt="foto grande">
+    </picture>
+    <p><a href="../Aulas integradas.html" rel="previous">Retornar</a></p>
+    <h1>Reproduzindo áudio</h1>
+    <p>Agora trabalharemos com sons, e para inserir sons no seu site, vocÊ pode acessar a <strong>biblioteca de musicas do <a href="https://studio.youtube.com/channel/UCq2QUqmiydzQ01q-witxdbA/music" rel="external" target="_blank">youtube studio</a></strong>, lá você terá acesso a musicas com licença para utilização.</p>
+    <p>Usando a tag <strong>audio</strong> e os parametros <strong>controls e o autoplay</strong>, seu som deve ter as opções para controle e tocar automaticamente ao iniciar o site (depende do navegador). </p>
+    <audio src="midia/Recording.m4a" autoplay controls></audio>
+    <p>os audios que são aceitos são mp3, wav e ogg</p>
+    <p>Tambem podemos usar o <strong>source</strong> com o <strong>audio</strong>, criando diferentes tipos de midia</p>
+    <p>Vale resaltar que o <strong>source</strong> tentará carregar os arquivos em ordem, se o primeiro não ler, ele irá para o próximo, até algum que funcione, então da para por uma mensagem de erro personalizada.</p>
+    <p>Para o audio use <strong>source:src</strong> no src use ponha o arquivo e em type use <em>audio/mpeg ou ogg ou wav</em></p>
+    <p>E dentro do <strong>audio</strong> use o parametro <em>preload</em> com cuidado para usar o <em>metadata</em> para carregar apenas informações do audio, <em>auto</em> para baixar o audio todo (deixa o site pesado!) e <em>none</em> para só baixar qualquer informação quando o usuario clicar</p>
+    <audio controls preload="metadata">
+        <source src="midia/recording.mpeg" type="audio/mpeg">
+        <source src="audio/recording.wav" type="audio/wav">
+        <source src="audio/recording.ogg" type="audio/ogg">
+        <source src="midia/Recording.m4a" type="audio/mpeg">
+        <p>infelismente seu navegador não responde aos audios disponíveis, desculpe nossa falha</p>
+       </audio>
+       <p><em>audio controls preload="metadata" <br> source src="midia/recording.mpeg" type="audio/mpeg" <br>source src="audio/recording.wav" type="audio/wav" <br>infelismente seu navegador não responde aos audios disponíveis, desculpe nossa falha</em> </p>
+
+</body>
+</html>

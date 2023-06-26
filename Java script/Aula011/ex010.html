@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        div#code {
+            background-color: black;
+            color: rgb(254, 0, 0);
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+
+    Velociadade do carro: <input type="number" name= "txtvel" id= "txtvel">Km/h <input type="button" value="verificar" onclick="verificar()">
+
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            var txtvel = window.document.querySelector ('input#txtvel')
+            var res = document.querySelector ('div#res')
+            var vel = Number(txtvel.value)
+            res.innerHTML = `Sua velocidade é <strong>${vel}Km/h</strong>`
+            if (vel > 60) {
+                res.innerHTML += ' Você ultrapassou o limite de velocidade. <STRONG>MULTADO!</STRONG>'
+            }
+        }
+    
+
+    </script>
+
+    <h1>Codigo</h1>
+
+    <div id="code">
+        <PRE><CODE>
+    Velociadade do carro: &LT;input type="number" name= "txtvel" id= "txtvel">Km/h &LT;input type="button" value="verificar" onclick="verificar()">
+
+    &LT;div id="res">&LT;/div>
+
+    &LT;script>
+        function verificar() {
+            var txtvel = window.document.querySelector ('input#txtvel')
+            var res = document.querySelector ('div#res')
+            var vel = Number(txtvel.value)
+            res.innerHTML = `Sua velocidade é &LT;strong>${vel}Km/h&LT;/strong>`
+            if (vel > 60) {
+                res.innerHTML += ' Você ultrapassou o limite de velocidade. &LT;STRONG>MULTADO!&LT;/STRONG>'
+            }
+                }
+        </CODE></PRE>
+    </div>
+
+    <a href="../../HTML - CSS/Exercícios/Aulas integradas.html" target="_self" rel="previous">Retornar</a>
+
+
+    
+</body>
+</html>

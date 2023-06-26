@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando numeros</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+        }
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>somando numeo</h1>
+
+    <input type="number" name="txtn1" id="txtn1">
+
+    <input type="number" name="txtn2" id="txtn2">
+
+    <input type="button" value="somar" onclick="somar()">
+
+    <div id="res"></div>
+    <script>
+        function somar () {
+                
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value
+            )
+            var res = window.document.getElementById('res')
+            var s = n1 + n2
+            res.innerText = `a soma entre ${n1} e ${n2} é ${s}`
+             }
+    </script>
+
+<h1>Explicando</h1>
+<p>O java script pode ser inserido tanto em um arquivo a parte como dentro do propio corpo do documento, nesse caso foi inserido dentro do corpo do próprio texto</p>
+<ol>Vamos aos passos do programa:
+    <li>Dentro do body HTML colocamos 2 <strong>entradas de dados</strong> e seus atributos foram <strong>type, name e id</strong>.<br>Os dois primeiros abrem as caixas para o usuario inserir os dados.   </li>
+    <li>Colocamos mais um <strong>input</strong> dessa vez com o type <strong>button</strong> que recebeu o <strong> values = "somar"</strong> e a chamda de função <strong>somar()</strong> atraves do atributo <strong>onclick</strong> que chama a função quando o usuario clica do botão.</li>
+    <li>A <strong>div</strong> foi criada com <strong>id</strong> = res.</li>
+    <li>Dentro do corpo do script criamos um bloco para a função somar</li>
+    <li>Criamos duas variaves para receberem os valores do usuario atravez da manipulação do <strong>DOM</strong>. <br>Podendo ser feito de diversas formas, por name, id ou <strong>querySelector</strong>.</li>
+    <li>Em outras duas variaves convertemos os dados para <strong>number.</strong></li>
+    <li>Criamos um variável para poder alterar pelo DOM a <strong>div</strong> res.</li>
+    <li>E a ultima variável para criar calcular a resposta</li>
+    <li>feito isso a propriedade <strong>.innerText</strong> para colocar a resposta do script. </li>
+</ol>
+<h2>Código utilizado:</h2>
+<pre><code>
+    &lt;input type="number" name="txtn1" id="txtn1"&gt;
+    &lt;input type="number" name="txtn2" id="txtn2"&gt;
+    
+    &lt;input type="button" value="somar" onclick="somar()"&gt;
+
+    &lt;div id="res"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+
+    function somar() {
+        var tn1 = window.document.getElementById('txtn1');
+        var tn2 = window.document.querySelector('input#txtn2');
+
+        var n1 = Number(tn1.value);
+        var n2 = Number(tn2.value);
+
+        var res = window.document.getElementById('res');
+
+        var s = n1 + n2;
+
+        res.innerText = `A soma entre ${n1} e ${n2} é ${s}`;
+    }
+    &lt;/script&gt;
+</code></pre>
+<a href="../../HTML - CSS/Exercícios/Aulas integradas.html" target="_self" rel="previous">Retornar</a>
+</body>
+</html>

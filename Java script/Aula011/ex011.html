@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pais de Origem</title>
+    <style>
+        body {
+            font: normal 16pt Arial;
+        }
+        div#res{
+            text-align: center;
+            font: bold 25pt Arial;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Bem vindo a Imigração</h1>
+    <p>Por favor informe seu país de origem:</p>
+
+    <input type="text" name="txtpais" id="txtpais"> <input type="button" value="Confirmar" onclick="verificar()">
+
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            var pais = document.querySelector('input#txtpais').value
+            var res = document.querySelector('div#res')
+
+            if (pais == 'brasil') {
+                res.innerHTML = 'Você é Brasileiro!!'            
+            }
+            else {
+                res.innerHTML = 'Você é gringo!!'
+            }
+        }
+    </script>
+    <h1>Explicação</h1>
+    <p>Um ponto que aprendi é que para as <strong>var</strong>s que vamos usar com o <strong>DOM</strong> sempre precisamos colocar o <strong>id</strong>. Nesse caso eu não havias posto e isso gerou o erro de não ler o <strong>var</strong>, outro ponto importante é lembrar de colocar o atributo <strong>.value</strong> no final para que seja o valor retornado. <del>Não sei o que mais poderia ser retornado além do valor mas...</del> </p>
+
+    <a href="../../HTML - CSS/Exercícios/Aulas integradas.html" target="_self" rel="previous">Retornar</a>
+
+
+</body>
+</html>

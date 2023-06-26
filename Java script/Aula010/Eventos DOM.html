@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+        
+        h1 {
+          color: #333;
+        }
+        
+        p {
+          margin-bottom: 10px;
+        }
+        
+        code {
+          background-color: #f2f2f2;
+          padding: 2px 4px;
+          border-radius: 4px;
+          font-family: Consolas, monospace;
+        }
+        div#area {
+          font: bolder 20pt arial;
+          background-color: blue;
+          color: aliceblue;
+          width: 200px;
+          height: 200px;
+          line-height: 200px;
+          text-align: center;
+        }
+        div#area2 {
+          font: normal 8pt arial;
+          background-color: blue;
+          color: aliceblue;
+          width: 200px;
+          height: 200px;
+          line-height: 200px;
+          text-align: center;
+        }
+      </style>
+    <title>Eventos DOM</title>
+</head>
+<body>
+    <h1>Introdução aos Eventos em JavaScript</h1>
+  
+    <p>Em JavaScript, eventos são ações que ocorrem no navegador do usuário. Eles permitem que você adicione interatividade e comportamento dinâmico aos seus sites. Aqui estão alguns conceitos importantes sobre eventos em JavaScript:</p>
+    
+    <h2>O que são eventos?</h2>
+    
+    <p>Eventos são ações que ocorrem no navegador, como um clique do mouse, pressionamento de tecla, carregamento da página, entre outros. Os eventos podem ser detectados e tratados pelo JavaScript, permitindo que você responda a essas ações e execute um bloco de código quando um evento ocorre.</p>
+    
+    <h2>Como usar eventos?</h2>
+    
+    <p>Para usar eventos em JavaScript, siga as seguintes etapas:</p>
+    
+    <ol>
+      <li>Selecione o elemento HTML ao qual deseja associar o evento. Você pode selecionar um elemento por seu identificador (ID), classe, nome da tag ou qualquer outro seletor CSS.</li>
+      <li>Associe o evento ao elemento usando o método <code>addEventListener</code>. Esse método permite que você especifique o tipo de evento que deseja tratar e a função que será executada quando o evento ocorrer.</li>
+      <li>Defina a função de tratamento do evento. Esta função será chamada sempre que o evento ocorrer e você pode escrever o código que deseja executar como resposta ao evento.</li>
+    </ol>
+    
+    <h2>Principais eventos em JavaScript</h2>
+    
+    <p>Aqui estão alguns exemplos de eventos comumente usados em JavaScript:</p>
+    
+    <ul>
+      <li><strong>Evento de clique:</strong> ocorre quando um elemento é clicado. Exemplo: <code>click</code>.</li>
+      <li><strong>Evento de carregamento da página:</strong> ocorre quando a página é carregada. Exemplo: <code>load</code>.</li>
+      <li><strong>Evento de pressionamento de tecla:</strong> ocorre quando uma tecla é pressionada. Exemplo: <code>keydown</code>.</li>
+      <li><strong>Evento de submissão de formulário:</strong> ocorre quando um formulário é submetido. Exemplo: <code>submit</code>.</li>
+      <li><strong>Evento de foco:</strong> ocorre quando um elemento ganha o foco. Exemplo: <code>focus</code>.</li>
+      <li><strong>Evento de mudança:</strong> ocorre quando o valor de um elemento é alterado.    </li>
+    </ul>
+    <h1>exemplos</h1>
+    <p>Vamos ver alguns exemplos de Evento de mouse</p>
+    <ul>
+      <li>mouseenter</li>
+      <li>mousemove</li>
+      <li>mousedown</li>
+      <li>mouseup</li>
+      <li>click</li>
+      <li>mouseout</li>
+    </ul>
+    <p>Ainda pode-se encontrar muitos mais eventos para se utilizar em bancos de dados online, como o da <a href="https://developer.mozilla.org/en-US/docs/Web/Events" rel="external" target="_blank">Mozilla, MDN</a></p>
+    
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseleave="saiu()"> 
+      Interaja...
+    </div>
+    
+    <div id="area2" > 
+      Interaja com addEventListener...
+    </div>  
+    
+    <p><a href="../../HTML - CSS/Exercícios/Aulas integradas.html" rel="previous">Retornar</a></p>
+    
+    <script>
+      var area = window.document.getElementById('area');
+    
+      function clicar() {        
+        area.innerText = 'clicou';
+        area.style.background = 'red';
+      }
+    
+      function entrar() {
+        area.innerText = 'entrou';
+      }
+    
+      function saiu() {
+        area.innerText = 'saiu';
+        area.style.background = 'blue';
+      }
+    
+      var area2 = document.getElementById('area2');
+    
+      area2.addEventListener('click', clicar);
+      area2.addEventListener('mouseenter', entrar);
+      area2.addEventListener('mouseleave', saiu);
+    
+      function clicar2() {
+        area2.innerText = 'clicou também';
+        area2.style.background = 'green';
+      }
+    
+      function entrar2() {
+        area2.innerText = 'entrou';
+      }
+    
+      function saiu2() {
+        area2.innerText = 'saiu';
+        area2.style.background = 'yellow';
+      }
+    </script>
+
+      
+
+
+      
+    </script>
+</body>
+</html>
