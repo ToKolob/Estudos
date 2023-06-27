@@ -26,3 +26,18 @@ footer {
     font-style: italic;
 
 }
+
+div {
+    text-align: center;
+    padding: 10px;
+}
+div#butao {
+    background-color: white;
+    border-radius: 10px;
+    margin:10px auto;
+    width: 500px;
+    font: bold 100% Arial ;
+    color: black;
+    box-shadow: 30px 10px 10px rgba(0, 0, 0, 0.453);
+
+}
