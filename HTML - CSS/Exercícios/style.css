@@ -1,0 +1,29 @@
+body {
+    background-color: rgba(0, 0, 0, 0.767);
+    color: white;
+    padding: 10px;
+    font: bold 12pt Arial;
+  
+}
+p {
+    padding: 10px;
+    background-color: sandybrown;
+    margin: auto;
+    border-radius: 10px;
+
+}
+li {
+    padding: 1px;
+    background-color: rgb(96, 190, 244);
+    margin: 10px;
+    border-radius: 8px;
+    padding-left: 20px;
+}
+a {
+    text-decoration: none;
+
+    font: bold 16pt Arial;
+}
+img {
+    padding: 10px;
+}
