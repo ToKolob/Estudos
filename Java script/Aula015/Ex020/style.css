@@ -1,0 +1,42 @@
+html,
+body {
+  height: 98%;
+}
+body {
+    background-image: linear-gradient(to bottom right, #ff0000, rgb(255, 0, 191));
+    background-size: cover;
+}
+header {
+    font: Bold 20px Arial;
+    color: white;
+    text-align: center;
+}
+section{
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+    width: 500px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.363);
+    border-radius: 10px;
+}
+select{
+    width: 500px;
+}
+footer {
+    font: Bold 20px Arial;
+    color: white;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+
+}
+div#retornar {
+    margin-top: 30px;
+    background-color: white;
+    padding: 10px;
+    margin: auto;
+    width: 500px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.363);
+    border-radius: 10px;
+}
