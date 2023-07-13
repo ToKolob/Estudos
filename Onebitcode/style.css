@@ -2,6 +2,19 @@ body {
     background-color: black;
     margin: auto;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+strong {
+    text-shadow: 1px 1px 20px rgb(255, 255, 255);
+}
+h1, h2, h3, h4{
+    text-shadow: 1px 1px 20px red;
+    -webkit-text-stroke: 1px red;
+}
+table {
+    padding: 10px;
+    margin: 10px;
+    border: 10px;
 }
 section {
     background-color: rgb(26, 26, 26);
@@ -51,4 +64,8 @@ span#verdeButton {
     border-radius: 30px;
     border:0cm;
 
+}
+code {
+    white-space: pre-wrap;
+    letter-spacing: 2px;
 }

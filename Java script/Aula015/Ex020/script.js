@@ -8,7 +8,7 @@ function adicionar(){
 
     var num = Number(numero.value)
 
-
+//validação
     if (num.length == 0 || num < 1 || num > 100) {
     window.alert("Campo invalido! Revise os dados e tente novamente")
     }
@@ -25,6 +25,8 @@ function adicionar(){
         lista.appendChild(item)
         
     }
+    numero.value = ""
+    numero.focus()
 }
 function finalizar() {
 
