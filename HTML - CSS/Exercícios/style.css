@@ -1,5 +1,6 @@
 body {
-    background-color: rgba(0, 0, 0, 0.767);
+    background-image: radial-gradient(rgba(255, 0, 174, 0.453), rgba(255, 117, 4, 0.507)) ;
+    background-size: cover;
     color: white;
     padding: 10px;
     font: bold 12pt Arial;
