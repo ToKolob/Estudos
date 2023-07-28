@@ -11,6 +11,9 @@ h1, h2, h3, h4{
     text-shadow: 1px 1px 20px red;
     -webkit-text-stroke: 1px red;
 }
+h2, h3, h4{
+    margin: 5px;
+}
 table {
     padding: 10px;
     margin: 10px;
