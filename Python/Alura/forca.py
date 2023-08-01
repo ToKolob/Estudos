@@ -1,25 +1,41 @@
-palavra_secreta = 'Moroni'
-letra_chutada = []
+def jogar():
+  palavra_secreta = 'Moroni'
+  letra_chutada = []
+  tentativa = ''
 
-def dica():
-  print('Sua dica é: ',end='')
-  for letra in palavra_secreta:  
+  def dica():
+    print('Sua dica é: ',end='')
+    for letra in palavra_secreta:  
 
-    if letra.lower in letra_chutada:
-      print (letra,end=' ')
+      if letra.lower() in letra_chutada:
+        print (letra,end=' ')
+      else:
+        print ('_',end=' ')
+      
+    print(f'\n Você ja tentou {letra_chutada}')
+
+    
+        
+    
+
+  while tentativa.lower() != palavra_secreta.lower():
+    dica()
+    tentativa = input('Informe uma letra ou a palavra secreta')
+    if len(tentativa) > 1:
+
+      print(f'Você informou a palavra {tentativa}')    
+
+      if tentativa.lower() == palavra_secreta.lower():
+        print ('Parabéns você acertou!')
+        break
+      else:
+        print ('você errou!')
     else:
-      print ('_',end=' ')
+
+      letra = tentativa.lower()
+      letra_chutada.append(letra)
     
-  print(f'\n Você ja tentou {letra_chutada}')
+      
 
-tentativa = input('Informe uma letra ou a palavra secreta')
-if len(tentativa) > 1:
-
-  print('palavra')
-  
-else:
-
-  print ('letra')    
-
-
-    
+if __name__ == '__main__':
+  jogar()
