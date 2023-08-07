@@ -1,75 +1,74 @@
 let menu = ''
 
-
 let jobVacancy =[{nome:"Administrador",descricao:"auxiliar de serviços administrativos",espira:'25/12',candidatos:['Felipe','Marcio','Penelope']},{nome:"Escriturário",descricao:"auxiliar de escritório",espira:'01/02', candidatos:['Gilmar']}]
 
+function listVacancy(){
+  let textToShow = jobVacancy.reduce(function(show,Vacancy,index){
+    show += `\n${index+1}. Nome: ${Vacancy.nome}\nNumero de candidatos: ${Vacancy.candidatos.length}\n`
+    return show
+  },"***Lista de vagas***\n") 
+  alert(textToShow)
+
+}
+function creatVacancy(){
+  nome = prompt('Qual o nome da vaga?')
+  descricao = prompt('Descreva a vaga.')
+  espira = prompt('Qual a data limite da vaga?')
+  
+  jobVacancy.push({nome,descricao,espira,candidatos:[]})
+}
+function showVacancy(){
+  
+
+  index = prompt('Qual vaga deseja visualizar?')-1
+
+  textCandidatos = jobVacancy[index].candidatos.reduce(function(total,valor,index){
+    total += `${index+1} ${valor}\n`
+    return total
+  },'\nLista de candidatos\n')
+
+  alert (`${index+1}. Nome: ${jobVacancy[index].nome}\n Descrição: ${jobVacancy[index].nome}\n Data limite: ${jobVacancy[index].espira}\n Total de candidatos: ${jobVacancy[index].candidatos.length} ${textCandidatos} `)
+
+
+}
 function addCandidate(){
-
+  newCandidate = prompt('Qual o nome do candidato?')
+  selectVacancy = prompt('Qual vaga deseja se cadastrar?')
+  jobVacancy[selectVacancy].candidatos.push = newCandidate
 }
 
-function info(array = jobVacancy, startInfo = 0, finishInfo = length) {
-  let information = ''
-    for (let index = startInfo; index < array.finishInfo; index++) {
-      information += `\n${index + 1}. Nome da vaga: ${array[index].nome}\n   Descrição: ${array[index].descricao}\n   Data Limite: ${array[index].espira}\n   Candidatos: ${array[index].candidatos.length}\n`;    
-    }
-  return (information)
-}
 
-function addingToVacancy(nameVacancy,description,limitDate){
-  newVacancy = {}
-  newVacancy.nome = nameVacancy
-  newVacancy.descricao = description
-  newVacancy.espira = limitDate
-  newVacancy.candidatos = []
-  let confirmationMensage = `Revise os dados: nome: ${newVacancy.nome} descrição: ${newVacancy.descricao} e data limite: ${newVacancy.espira} }`
-  confirmation = confirm(confirmationMensage)
-  if (confirmation){
-    return newVacancy}
-  else{
-    alert('Dados apagados')
-}
-}
+
+
 
 function startProgram() {  
   do {
     menu = prompt('***Menu***\n\n    1. Listar vagas disponíveis\n    2. Criar nova vaga\n    3. Visualizar uma vaga\n    4. Inscrever candidato em uma vaga\n    5. Excluir uma vaga\n    6. Sair')
     switch (menu) {
       case '1':
-        //Listar vagas
-        let information = '***Listagem das vagas***\n'
-        for (let index = 0; index < jobVacancy.length; index++) {
-          information += `\n${index + 1}. Nome da vaga: ${jobVacancy[index].nome}\n   Descrição: ${jobVacancy[index].descricao}\n   Data Limite: ${jobVacancy[index].espira}\n   Candidatos: ${jobVacancy[index].candidatos.length}\n`;    
-        }
-        alert (information)        
+        //Listar vagas  
+        listVacancy()
+
         break;
 
       case '2':
+        creatVacancy()
         //Criar nova vaga
-        let nameVacancy = prompt('Nome da vaga:')
-        let description = prompt('Descrição da vaga')
-        let limitDate = prompt('Data em que espira')
-        jobVacancy.push(addingToVacancy(nameVacancy,description,limitDate))
         break;
 
       case '3':
-        whichVage = prompt('Qual vaga deseja visualizar?')
-        alert(info(jobVacancy,whichVage-1,whichVage))
+        showVacancy()
         //Visualizar uma vaga        
         break;
 
       case '4':
-        let candidateName = prompt('Qual o nome do candidato?')
-        let candidateVacancy = prompt('Qual vaga ele vai se candidatar?')
-        jobVacancy[candidateVacancy-1].candidatos.push(candidateName)
-
+        addCandidate()
         //Inscrever um candidato a vaga
-
         
         break;
       case '5':
         //Excluir uma vaga
-        let deletedVacancy = prompt('qual deseja deletar?')
-        jobVacancy.splice(deletedVacancy-1,1)
+        
         
         break;
       case '6':
