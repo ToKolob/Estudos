@@ -31,6 +31,7 @@ inh.addEventListener('click',function(ev){
   experience1.id = 'experience1'
   experience1.value = 'Até 2 anos'
   radios.appendChild(experience1)
+  experience1.checked
 
   const experience1label = document.createElement('label')
   experience1label.id = 'forRadio'
@@ -43,7 +44,7 @@ inh.addEventListener('click',function(ev){
   experience2.type = 'radio'
   experience2.name = 'experience'+cont
   experience2.id = 'experience2'
-  experience2.value = '  Até 2 anos'
+  experience2.value = '  De 2 a 5 anos'
   radios.appendChild(experience2)
 
   const experience2label = document.createElement('label')
@@ -57,7 +58,7 @@ inh.addEventListener('click',function(ev){
   experience3.type = 'radio'
   experience3.name = 'experience'+cont
   experience3.id = 'experience3'
-  experience3.value = '  Até 2 anos'
+  experience3.value = '  Mais de 5 anos'
   radios.appendChild(experience3)
 
   const experience3label = document.createElement('label')
@@ -72,6 +73,8 @@ inh.addEventListener('click',function(ev){
   radios.appendChild(removeButton)
   removeButton.addEventListener('click',function(){
     this.parentNode.remove()
+
+    radios.innerHTML +='<br>'
   })
 })
 
@@ -82,19 +85,24 @@ submitData.addEventListener('click',function(ev){
 
   ev.preventDefault()
 
+  const paragraphsInsideSpan = radiosSpan.querySelectorAll('p')
+
   let mConfirm = ''
+
   const name = document.querySelector('input#name').value
   mConfirm += 'Nome: ' + name +'\n'
 
-  for (let index = 1; index < radiosSpan.children.length+1; index++) {
-    let hability = document.querySelector('input#hability'+index).value
-    mConfirm += 'Tecnologia: ' + hability
+  for (let index = 1; index <= cont; index++) {
+    
+    if (paragraphsInsideSpan[index-1]){
 
-    let experience = document.querySelector('input[name=experience'+index+']:checked').value
-    mConfirm += ', experiência: ' + experience    
+      let hability = document.querySelector('input#hability'+index).value
+      mConfirm += 'Tecnologia: ' + hability
+
+      let experience = document.querySelector('input[name=experience'+index+']:checked').value
+      mConfirm += ', experiência: ' + experience +'\n'
+    }       
   }
-
-  alert(radiosSpan.children.length)
 
   confirm('Deseja cadastrar os seguintes dados? \n' + mConfirm)
 })
