@@ -34,9 +34,33 @@ inputs.addEventListener('keydown',function(ev){
 
 
 document.getElementById('equal').addEventListener('click',calculate)
-
+ 
 function calculate() {
+  resultInput.value = 'Error'
+  resultInput.classList.add('error')
   const result = eval(inputs.value)
   resultInput.value = result
+  resultInput.classList.remove('error')
+  
   
 }
+
+document.getElementById('themeSwitch').addEventListener('click',function(){
+  if (main.dataset.theme === 'dark'){
+    root.style.setProperty('--bg-color', '#fff')
+    root.style.setProperty('--font-color', '#222')
+    root.style.setProperty('--primary-color', '#2a1')
+    main.dataset.theme = 'light'
+  }
+  else{
+    root.style.setProperty('--bg-color', '#222')
+    root.style.setProperty('--font-color', '#fff')
+    root.style.setProperty('--primary-color','#4dff91')
+    main.dataset.theme = 'dark'
+  }
+})
+
+document.getElementById('copyToClipboard').addEventListener('click',function(){
+  window.navigator.clipboard.writeText(resultInput.value)
+
+})

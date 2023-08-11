@@ -16,6 +16,7 @@ body {
   background-color: var(--bg-color);
   color: var(--font-color);
   font-family: "Ubuntu", sans-serif;
+  transition: 1s;
 }
 
 main {
@@ -24,6 +25,7 @@ main {
   max-width: 40rem;
   padding: 0 1.5rem 2.5rem;
   position: relative;
+  
 }
 
 header {
@@ -47,7 +49,7 @@ button {
   border-radius: .25rem;
   font-weight: 700;
   padding: .5rem 1rem;
-  transition: .15s;
+  transition: 1s;
 }
 
 input {
@@ -61,6 +63,7 @@ input {
   padding: 1rem;
   text-align: end;
   width: 100%;
+  transition: .5s;
 }
 
 #keys {
