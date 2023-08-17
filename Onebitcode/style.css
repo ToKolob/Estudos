@@ -41,8 +41,19 @@ footer {
 p {
     margin-left: 10px;
 }
+ul {
+    
+}
 li{
-    padding-left: 10px;
+
+    padding: 10px;
+
+
+    
+    
+    
+    
+
 }
 h1{
     text-align: center;
@@ -57,6 +68,7 @@ a {
     font: bold 16px Arial;
     text-decoration: none;
     color: yellow;
+    display: contents;
 }
 img {
     margin-left: 30px;
@@ -85,4 +97,31 @@ div.retornar {
 }
 input {
     margin: 5px 0 5px 0;
+}
+.bigger {
+    box-shadow: 0px 0px 30px red;
+    transition: 0.5s;
+    font-size: 20pt;
+    transform: scale(1.1);
+}
+.itens {
+    display: flex;
+    padding: 10px;
+    width: 20%;
+    height: 80px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px black solid;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px red;
+    margin: 10px;
+    transition: 0.5s;
+}
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-content: center;
+
 }

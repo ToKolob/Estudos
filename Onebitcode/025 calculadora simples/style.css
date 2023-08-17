@@ -121,3 +121,12 @@ input {
   border-color: var(--primary-color) !important;
   color: var(--primary-color) !important;
 }
+div.retornar {
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  margin-left: auto;
+  color: black;
+  background-color: red;
+  box-shadow: none;
+}
