@@ -43,39 +43,48 @@ header a {
   border-radius: 5px;
   margin-top: -30px;
 }
-.experience,.education {
-  max-width: 1000px;
+.experience,.education, .exercises{
+  max-width:;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 20px;
   
 }
 
 .experience article,
-.education article {
-  width: calc(50% - 50px);
-  margin-bottom: 20px;
+.education article,
+.exercises article {
+  width: 300px;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  
+  height: 100%;
+  transition: height 1s ease;  
 }
+.experience article{
+  cursor: pointer;
+}
+
 div.container {
   display: flexbox;
   margin: 15px;
   padding: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
+  
 
 
 }
-#itauTopics {
-  transition: 1s;
-  
-  scale: 1.1;
+.hidden {
+  display:  none;
+  transition: 1s;  
+}
+
+a {
+  text-decoration: none;
+  font-weight: bolder;
 }
 
 

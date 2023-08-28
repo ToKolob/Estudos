@@ -1,18 +1,18 @@
-const itauTopics = document.querySelector('#itauTopics')
-itauTopics.addEventListener('click',openBox)
-
 const articles = document.querySelectorAll('article')
-articles[0].addEventListener('click',openBox)
-articles[0].addEventListener('mouseleave',closeBox)
 
-function closeBox(){
-  itauTopics.parentElement.removeChild(itauTopics)
+articles.forEach((article)=> {article.addEventListener('click',toggleUL)})
 
-}
-itauTopics.parentElement.removeChild(itauTopics)
+function toggleUL(ev) {
+  const ul = ev.currentTarget.querySelector('ul')
+  ul.classList.toggle('hidden')
 
-function openBox(el){
+  //toggle size
+  const article = ev.currentTarget
+  
+  if (article.style.height === '150%'){
+    article.style.height = '100%'
     
-  const clickedEl = el.currentTarget
-  clickedEl.appendChild(itauTopics)
-} 
+  }else{
+    article.style.height = '150%'
+  }
+}
