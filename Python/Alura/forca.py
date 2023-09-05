@@ -1,4 +1,7 @@
 def jogar():
+
+  arquivo = open("c:\Users\lucas\Documents\Programação\Estudos\Python\Alura\palavras.txt", "r")
+
   palavra_secreta = 'Moroni'
   letra_chutada = []
   tentativa = ''
