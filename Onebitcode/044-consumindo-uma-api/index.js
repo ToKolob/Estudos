@@ -1,4 +1,5 @@
 function render(transacaoDados){
+  //a tr vai conter todas as td que se referem a cada coluna da linha dos itens da lista
   const transacao = document.createElement('tr')
   transacao.classList.add('transação')
   transacao.id = `transacao-${transacaoDados.id}`
@@ -9,15 +10,17 @@ function render(transacaoDados){
 
   const valor = document.createElement('td')
   valor.classList.add('valor')
-  valor.textContent = transacaoDados.valor
+  valor.textContent = parseFloat(transacaoDados.valor).toFixed(2)
+  valor.style = 'text-align: right;'
 
   const descricao = document.createElement('td')
   descricao.classList.add('descricao')
   descricao.textContent = transacaoDados.descricao
 
   const deletar = document.createElement('button')
-  deletar.textContent ='deletar'
+  deletar.textContent ='X'
   deletar.addEventListener('click',deletarTransacao)
+  deletar.style='background-color: red; color: white;'
 
   const alterar = document.createElement('button')
   alterar.textContent ='alterar'
@@ -26,13 +29,14 @@ function render(transacaoDados){
   transacao.append(data, valor, descricao, alterar, deletar)
 
   document.querySelector('#receber').appendChild(transacao)
+  saldoAtualizado();
 }
 
 async function acessarURL(){
-  console.log('acessar URL entrou');
   const transacoes = await fetch('http://localhost:3000/transacao').then(res => res.json())
 
   transacoes.forEach(render);  
+  saldoAtualizado();
 }
 
 document.addEventListener('DOMContentLoaded', () => {acessarURL()})
@@ -74,7 +78,9 @@ async function deletarTransacao(ev){
     headers: {
       'Content-Type': 'application/json'
     }
+    
   })
+  saldoAtualizado();
 
 }
 
@@ -101,5 +107,30 @@ async function alterarTransacao(ev){
 
   render(await transacaoModificada.json())
   form.reset()
+  saldoAtualizado();
 
 }
+async function saldoAtualizado() {
+  try {
+    const response = await fetch('http://localhost:3000/transacao');
+    const transacoes = await response.json();
+
+    // Inicialize o saldo com zero
+    let saldo = 0;
+
+    // Itere pelas transações e atualize o saldo
+    transacoes.forEach((transacao) => {
+      saldo += parseFloat(transacao.valor);
+    });
+
+    const saldoNaTela = document.querySelector("#saldo")
+    saldoNaTela.innerHTML = saldo.toFixed(2) 
+
+    console.log('Saldo Atualizado:', saldo.toFixed(2)); // Arredonde o saldo para 2 casas decimais
+  } catch (error) {
+    console.error('Ocorreu um erro:', error);
+  }
+}
+
+saldoAtualizado();
+

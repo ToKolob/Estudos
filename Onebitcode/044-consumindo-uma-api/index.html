@@ -18,7 +18,7 @@
       <label for="data">Data: </label>
       <input type="date" name="data" id="data">
       <label for="valor">Valor: </label>
-      <input type="number" name="valor" id="valor">
+      <input type="number" name="valor" id="valor" step="0.01">
       <label for="descricao">Descrição: </label>
       <input type="text" name="descricao" id="descricao" maxlength="50">
       <button type="submit">Enviar</button>
@@ -34,8 +34,17 @@
       <tbody id="receber">
         
       </tbody>
+      <tbody style="background-color: yellow; color: black; font-weight: bolder;">
+        <tr>
+          <td>Saldo total</td>
+          <td id="saldo" style="text-align: right;">0.00</td>
+          
+        </tr>
+        
+      </tbody>
       
     </table>
+    
 
   </section>
   
